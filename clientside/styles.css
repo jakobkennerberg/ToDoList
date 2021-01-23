@@ -1,0 +1,151 @@
+html {
+    font-size: 62.5%;
+}
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: whitesmoke;
+    font-family: 'Noto Sans JP', sans-serif;
+    
+}
+
+h1 {
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: lighter;
+    margin-left: 2rem;
+}
+
+img {
+    height: 90%;
+    width: 50px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.taskContainer {
+    min-width: 70%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    border-radius: 2rem;
+    box-shadow: lightgray;
+    background-color: hotpink;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.taskClickable {
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 2rem;
+    background-color: indigo;
+}
+
+.taskLink {
+    font-size: 3rem;
+    font-weight: lighter;
+    margin-left: 2rem;
+    color: black;
+}
+
+.checkbox {
+    background-color: green;
+    height: 80%;
+    width: 50px;
+    margin-right: 2rem;
+}
+
+.newBtn {
+    display: flex;
+    background-color: rgb(14, 137, 179);
+    color: whitesmoke;
+    font-size: 10rem;
+    height: 7rem;
+    width: 7rem;
+    border-radius: 5rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); 
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 50;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1); 
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.modal-header.title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-header.modal-cancel {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 10px 15px;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none; 
+    transition: 200ms ease-in-out;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+
