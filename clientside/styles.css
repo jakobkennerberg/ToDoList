@@ -30,10 +30,7 @@ label {
     background: red;
 }
 
-img {
-    height: 90%;
-    width: 50px;
-}
+
 
 .container {
     display: flex;
@@ -42,36 +39,89 @@ img {
     align-items: center;
 }
 
+.categoryImage {
+    height: 90%;
+    width: 50px;
+}
+
+.categoryImage.crossed {
+    opacity: 0.5;
+}
+
 .taskContainer {
-    position: relative;
     min-width: 70%;
-    height: 60px;
+    height: 70px;
     display: flex;
     flex-direction: row;
     margin-top: 2rem;
     border-radius: 2rem;
-    box-shadow: lightgray;
-    background-color: hotpink;
+    box-shadow: 5px 5px 5px lightgray;
+    background-color: white;
     justify-content: space-between;
     align-items: center;
 }
 
-
-.taskClickable {
+.textContainer {
     display: flex;
-    width: 100%;
     flex-direction: row;
     align-items: center;
     margin: 2rem;
-    background-color: indigo;
 }
 
-
 .taskLink {
+    position: relative;
     font-size: 3rem;
     font-weight: lighter;
     margin-left: 2rem;
     color: black;
+    text-decoration: none;
+}
+
+.taskLink::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 50%;
+    height: 3px;
+    background: black;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 200ms ease-in-out;
+}
+
+.taskLink.crossed {
+    opacity: 0.5;
+}
+
+.taskLink.crossed::after {
+    transform: scaleX(1);
+    transform-origin: right;
+}
+
+.checkbox {
+    --size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: var(--size);
+    height: var(--size);
+    margin-right: 2rem;
+    cursor: pointer;
+    box-shadow: 0px 3px 10px lightgray;
+    transition: transform 300ms ease-in-out;
+}
+
+.checkbox:hover {
+    transform: scale(1.2);
+}
+
+.checkbox.checked {
+    background-color: rgb(43, 121, 43);
+    font-size: 3rem;
+    font-weight: 1000;
+    color: white;
 }
 
 .newBtn {
@@ -91,7 +141,7 @@ img {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0); 
+    transform: translate(-50%, -50%); 
     transition: 200ms ease-in-out;
     border: 1px solid black;
     border-radius: 10px;
@@ -99,10 +149,6 @@ img {
     background-color: white;
     width: 500px;
     max-width: 80%;
-}
-
-.modal.active {
-    transform: translate(-50%, -50%) scale(1); 
 }
 
 .modal-header {
@@ -133,7 +179,7 @@ img {
 
 #overlay {
     position: fixed;
-    opacity: 0;
+    opacity: 1;
     top: 0;
     left: 0;
     right: 0;
@@ -141,56 +187,7 @@ img {
     background-color: rgba(0, 0, 0, .5);
     pointer-events: none; 
     transition: 200ms ease-in-out;
-}
-
-#overlay.active {
-    opacity: 1;
     pointer-events: all;
-}
-
-[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-}
-
-.custom-checkbox {
-    margin-right: 2rem;
-    --size: 3rem;
-    display: inline-block;
-    width: var(--size);
-    height: var(--size);
-    cursor: pointer;
-    border: 2px solid currentColor;
-    border-radius: 50%;
-    transform: scale(1);
-    transition: transform 300ms ease-in-out;
-}
-
-label::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    left: 0;
-    top: 50%;
-    height: 3px;
-    background: currentColor;
-    transform: scaleX(0);
-    transition: transform 150ms ease-in-out;
-    transform-origin: left;
-}
-
-.taskContainer:hover .custom-checkbox, [type="checkbox"]:focus + label .custom-checkbox {
-    transform: scale(1.2);
-}
-
-[type="checkbox"]:checked + label .custom-checkbox {
-    background: green;
-}
-
-[type="checkbox"]:checked + label::after {
-    transform: scaleX(1);
-    transform-origin: right;
-    opacity: 0.5;
 }
 
 

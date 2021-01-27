@@ -11,6 +11,12 @@ router.get('/edit/:id', async (req, res) => {
     res.render('edit', {task: task});
 })
 
+router.get('/:id', async (req, res) => {
+    const list = await Task.find().sort({createdAt: 'desc'});
+    const task = await Task.findById(req.params.id);
+    res.render('modal', {list: list, task: task});
+})
+
 router.post("/", async (req, res, next) => {
     req.task = new Task();
     next();

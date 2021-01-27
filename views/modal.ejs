@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
+    <link href= "clientside/styles.css" rel="stylesheet" type="text/css" />
+    <script defer src="clientside/app.js"></script>
+    <title>Epic To-Do List</title>
+</head>
+<body>
+    <div class="container">
+        <h1>All tasks</h1>
+
+        <% list.forEach(task => { %>
+            <div class="taskContainer">
+                <div class="taskClickable">
+                    <img src="../clientside/images/football.png">
+                    <input type="checkbox" id="<%= task.id %>"/>
+                    <label for="<%= task.id %>">
+                        <a href="tasks/<%= task.id%>" class="taskLink"><%= task.title %></a>
+                        <span class="custom-checkbox"></span> 
+                    </label> 
+                </div>
+            </div>
+        <% }) %>
+
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <div class="modal-title"><%= task.title %></div>
+                <a href="/">&times;</a>
+            </div>
+            <div class="modal-body">
+                <%= task.reward %>
+                <button data-edit-button class="modalEdit">Edit task</button>
+            </div>
+        </div>
+        <div id="overlay">
+            <a href="/"></a>
+        </div>
+        <a href="/tasks/new" class="newBtn"> + </a>
+    </div>
+</body>
+</html>
