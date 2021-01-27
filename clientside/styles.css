@@ -30,8 +30,6 @@ label {
     background: red;
 }
 
-
-
 .container {
     display: flex;
     flex-direction: column;
@@ -61,6 +59,10 @@ label {
     align-items: center;
 }
 
+.taskContainer.crossed {
+    opacity: 0.5;
+}
+
 .textContainer {
     display: flex;
     flex-direction: row;
@@ -83,10 +85,10 @@ label {
     right: 0;
     left: 0;
     top: 50%;
-    height: 3px;
+    height: 2px;
     background: black;
-    transform: scaleX(0);
     transform-origin: right;
+    transform: scaleX(0);
     transition: transform 200ms ease-in-out;
 }
 
@@ -96,7 +98,6 @@ label {
 
 .taskLink.crossed::after {
     transform: scaleX(1);
-    transform-origin: right;
 }
 
 .checkbox {
@@ -127,13 +128,16 @@ label {
 .newBtn {
     display: flex;
     background-color: rgb(14, 137, 179);
-    color: whitesmoke;
+    color: white;
     font-size: 10rem;
     height: 7rem;
     width: 7rem;
-    border-radius: 5rem;
+    border-radius: 50%;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+    box-shadow: 0px 5px 20px lightgray;
+    padding-bottom: 10px;
     margin-top: 2rem;
 }
 

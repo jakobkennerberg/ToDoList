@@ -15,14 +15,11 @@
 
         <% list.forEach(task => { %>
             <div class="taskContainer">
-                <div class="taskClickable">
-                    <img src="../clientside/images/football.png">
-                    <input type="checkbox" id="<%= task.id %>"/>
-                    <label for="<%= task.id %>">
-                        <a href="tasks/<%= task.id%>" class="taskLink"><%= task.title %></a>
-                        <span class="custom-checkbox"></span> 
-                    </label> 
+                <div class="textContainer">
+                    <img class="categoryImage" src="../clientside/images/football.png">
+                    <a href="tasks/<%= task.id%>" class="taskLink"><%= task.title %></a>
                 </div>
+                <div data-checkbox class="checkbox" id="<%= task.id %>"></div>
             </div>
         <% }) %>
 
@@ -36,9 +33,9 @@
                 <button data-edit-button class="modalEdit">Edit task</button>
             </div>
         </div>
-        <div id="overlay">
-            <a href="/"></a>
-        </div>
+        
+        <a id="overlay" href="/"></a>
+        
         <a href="/tasks/new" class="newBtn"> + </a>
     </div>
 </body>

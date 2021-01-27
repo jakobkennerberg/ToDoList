@@ -35,6 +35,7 @@ const overlay = document.getElementById('overlay');
 function unCross(checkbox) {
     checkbox.classList.remove('checked');
     checkbox.innerHTML = "";
+    checkbox.closest('.taskContainer').classList.remove('crossed');
     elements = getTaskElements(checkbox);
     elements[0].classList.remove('crossed');
     elements[1].classList.remove('crossed');
@@ -44,6 +45,7 @@ function unCross(checkbox) {
 function crossOut(checkbox) {
     checkbox.innerHTML = "&check;"; 
     checkbox.classList.add('checked');
+    checkbox.closest('.taskContainer').classList.add('crossed');
     elements = getTaskElements(checkbox);
     elements[0].classList.add('crossed');
     elements[1].classList.add('crossed');

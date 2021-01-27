@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Task = require('../models/taskModel');
 
+router.use('/clientside', express.static('clientside'));
+
 router.get('/new', (req, res) => {
     res.render('new', {task: new Task()});
 })
