@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const taskRouter = require('./routes/tasks');
 const Task = require('./models/taskModel');
+const methodOverride = require('method-override');
 const app = express(); 
 require('dotenv/config');
 
@@ -16,7 +17,7 @@ try {
 
 app.set('view engine', 'ejs'); 
 app.use(express.urlencoded({ extended: false })); //To be able to access form data
-
+app.use(methodOverride('_method'));
 app.use('/clientside', express.static('clientside'));
 app.use('/tasks', taskRouter);
 

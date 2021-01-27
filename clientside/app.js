@@ -39,4 +39,10 @@ function closeModal(modal) {
     overlay.classList.remove('active');
 }
 
-console.log('hello world');
+function registerTasks(taskTitle) {
+    console.log(taskTitle);
+}
+
+function hej() {
+    console.log('hej');
+}

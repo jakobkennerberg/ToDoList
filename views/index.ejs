@@ -17,23 +17,26 @@
             <div class="taskContainer">
                 <div class="taskClickable">
                     <img src="../clientside/images/football.png">
-                    <a data-modal-target="#modal" class="taskLink"><%= task.title %></a>
-                    <div class="modal" id="modal">
-                        <div class="modal-header">
-                            <div class="modal-title"><%= task.title %></div>
-                         <button data-close-button class="modal-cancel">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi autem asperiores dolores qui laboriosam soluta alias delectus, omnis ipsum animi eaque quidem. Praesentium perferendis corrupti beatae aliquam saepe, illo rerum perspiciatis mollitia eveniet? Voluptatum a aperiam necessitatibus neque fugit, quae nobis facilis eligendi repellendus, earum non quasi eveniet, eos fuga nesciunt animi sapiente! Laboriosam vero magnam voluptatem unde, rerum nobis ipsum vitae dolorem, necessitatibus odit, mollitia ea id? Dolorem similique saepe a aperiam itaque mollitia expedita quisquam facere veritatis hic.
-                            <button data-edit-button class="modalEdit">Edit task</button>
-                        </div>
-                    </div>
-                    <div id="overlay"></div>
+                    <input type="checkbox" id="<%= task.id %>"/>
+                    <label for="<%= task.id %>">
+                        <a data-modal-target="#modal" class="taskLink"><%= task.title %></a>
+                        <span class="custom-checkbox"></span> 
+                    </label> 
                 </div>
-                <div class="checkbox" onclick=""></div>
             </div>
         <% }) %>
-        
+
+        <div class="modal" id="modal">
+            <div class="modal-header">
+                <div class="modal-title">Modal</div>
+                <button data-close-button class="modal-cancel">&times;</button>
+            </div>
+            <div class="modal-body">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi autem asperiores dolores qui laboriosam soluta alias delectus, omnis ipsum animi eaque quidem. Praesentium perferendis corrupti beatae aliquam saepe, illo rerum perspiciatis mollitia eveniet? Voluptatum a aperiam necessitatibus neque fugit, quae nobis facilis eligendi repellendus, earum non quasi eveniet, eos fuga nesciunt animi sapiente! Laboriosam vero magnam voluptatem unde, rerum nobis ipsum vitae dolorem, necessitatibus odit, mollitia ea id? Dolorem similique saepe a aperiam itaque mollitia expedita quisquam facere veritatis hic.
+                <button data-edit-button class="modalEdit">Edit task</button>
+            </div>
+        </div>
+        <div id="overlay"></div>
         <a href="/tasks/new" class="newBtn"> + </a>
     </div>
 </body>
