@@ -13,6 +13,7 @@
     <div class="container">
         <h1>All tasks</h1>
 
+        <ul class="taskList">
         <% tasks.forEach(task => { %>
             <div class="taskContainer">
                 <div class="textContainer">
@@ -22,6 +23,7 @@
                 <div data-checkbox class="checkbox" id="<%= task.id %>"></div>
             </div>
         <% }) %>
+        </ul>
 
         <a href="/tasks/new" class="newBtn">&#43;</a>
     </div>

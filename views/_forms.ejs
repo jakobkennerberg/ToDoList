@@ -1,15 +1,22 @@
-<div class="form_group">
-    <label for="title">Title</label>
-    <input required value="<%= task.title %>" type="text" name="title" id="title">
+
+<div class="inputContainer">
+    <div class="form_group">
+        <label for="title">Title</label>
+        <input required value="<%= task.title %>" type="text" name="title" id="title">
+    </div>
+    <div class="form_group">
+        <label for="reward">Reward</label>
+        <input required value="<%= task.reward %>" type="text" name="reward" id="reward">
+    </div>
+    <div class="form_group">
+        <label for="description">Description</label>
+        <textarea name="description" id="description"><%= task.description %></textarea>
+    </div>
+    <a href="/" class="newBtn">-</a>
 </div>
-<div class="form_group">
-    <label for="reward">Reward</label>
-    <input required value="<%= task.reward %>" type="text" name="reward" id="reward">
-</div>
-<div class="form_group">
-    <label for="description">Description</label>
-    <textarea name="description" id="description"><%= task.description %></textarea>
+<div class="carouselContainer">
+    <div class="carousel">Hegeg</div>
+    <button type="submit">Create Task</button>
 </div>
 
-<a href="/" class="newBtn">Cancel</a>
-<button type="submit">Create Task</button>
+

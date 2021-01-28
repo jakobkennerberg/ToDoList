@@ -9,11 +9,13 @@
     <title>Epic To-Do List</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Success</h1>
-        <form action="/tasks" method="POST">
-            <%- include('_forms') %>
-        </form>
+    <div class="newTaskContainer">
+        <div class="backgroundContainer">
+            <h1>New Task</h1>
+            <form class="formContainer" action="/tasks" method="POST">
+                <%- include('_forms') %>
+            </form>
+        </div>    
     </div>
 </body>
 </html>

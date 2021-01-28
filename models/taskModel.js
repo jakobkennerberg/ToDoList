@@ -18,6 +18,10 @@ const taskSchema = new mongoose.Schema({
     category: {
         type: String,
         default: 'Household'
+    }, 
+    checked: {
+        type: Boolean,
+        default: false
     }
 })
 

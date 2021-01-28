@@ -45,10 +45,13 @@ function unCross(checkbox) {
 function crossOut(checkbox) {
     checkbox.innerHTML = "&check;"; 
     checkbox.classList.add('checked');
-    checkbox.closest('.taskContainer').classList.add('crossed');
+    const taskItem = checkbox.closest('.taskContainer');
+    taskItem.classList.add('crossed');
     elements = getTaskElements(checkbox);
     elements[0].classList.add('crossed');
     elements[1].classList.add('crossed');
+    const listElement = taskItem.closest('.taskList');
+    listElement.appendChild(taskItem);
 }
 
 function getTaskElements(checkbox) {
